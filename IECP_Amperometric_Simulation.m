@@ -27,7 +27,7 @@ Membrane_Diffusion = H2O2_Diff;
 Membrane_Thickness = 0.1;
 Electrode_Height = 0.0375;
 
-Max_Velocity = .005; Menten_Coeff = 0.0026; %0.0026;
+Max_Velocity = .001; Menten_Coeff = 0.0026; %0.0026;
 
 Voxel_Size = 0.05; F = 96485;
 V_Volume = (Voxel_Size/100)^3; 
