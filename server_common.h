@@ -6,26 +6,6 @@
 #ifndef SERVER_COMMON_H_
 #define SERVER_COMMON_H_
 
-#define ADC_CHANNEL_TEMPSENSOR 4
-
-#define Buff_Size 62
-extern int le_notification_enabled;
-extern hci_con_handle_t con_handle;
-
-//Data buffers
-extern uint32_t TX_Buffer[Buff_Size];
-extern uint32_t V_Buffer[Buff_Size-2];
-extern uint32_t I_Buffer[Buff_Size-2];
-extern uint32_t Time_Buffer[Buff_Size-2];
-
-extern uint16_t read_count;
-extern uint8_t const profile_data[];
-
-void packet_handler(uint8_t packet_type, uint16_t channel, uint8_t *packet, uint16_t size);
-uint16_t att_read_callback(hci_con_handle_t connection_handle, uint16_t att_handle, uint16_t offset, uint8_t * buffer, uint16_t buffer_size);
-int att_write_callback(hci_con_handle_t connection_handle, uint16_t att_handle, uint16_t transaction_mode, uint16_t offset, uint8_t *buffer, uint16_t buffer_size);
-void poll_temp(void);
-
 #endif
 #ifndef _AMPEROMETRIC_H_
 #define _AMPEROMETRIC_H_
@@ -98,6 +78,5 @@ float AppAMPCalcCurrent(uint32_t ADCcode);
 
 void TestAmp();
 void AD5940_PGA_Calibration(void);
-void AD5940_PGA_V_Calibration(void);
 ADCBaseCfg_Type ADC_Setup(ADCBaseCfg_Type adc_base, ADCFilterCfg_Type adc_filter);
 #endif
